@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox fx:id="item" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="RIGHT_TO_LEFT" prefHeight="320.0" prefWidth="233.0" stylesheets="@../assets/styles/blueOrange.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane id="storeCard" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="320.0" prefWidth="233.0">
+         <children>
+            <Pane id="storeCardTop" layoutY="-2.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="86.0" prefWidth="233.0">
+               <children>
+                  <HBox alignment="CENTER" layoutY="-5.0" prefHeight="74.0" prefWidth="233.0">
+                     <children>
+                        <Label fx:id="name" alignment="CENTER" prefHeight="94.0" prefWidth="156.0" text="المخزن الرئيسي" textFill="WHITE" HBox.hgrow="ALWAYS">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="id" alignment="CENTER" prefHeight="92.0" prefWidth="68.0" text="0" textFill="WHITE" HBox.hgrow="ALWAYS">
+                           <font>
+                              <Font size="32.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <Label fx:id="invoiceNumber" alignment="CENTER_RIGHT" layoutX="5.0" layoutY="61.0" prefHeight="25.0" prefWidth="135.0" text="0" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="invoiceNumber1" alignment="CENTER" layoutX="142.0" layoutY="60.0" prefHeight="25.0" prefWidth="80.0" text="فاتورة رقم" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <VBox layoutX="-5.0" layoutY="89.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="224.0" prefWidth="233.0">
+               <children>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="44.0" prefWidth="233.0">
+                     <children>
+                        <Label fx:id="units" alignment="CENTER_RIGHT" prefHeight="41.0" prefWidth="168.0" text="Label" textFill="WHITE">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                           <padding>
+                              <Insets right="10.0" />
+                           </padding>
+                        </Label>
+                        <ImageView fitHeight="41.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/icons/icons8_package_128px.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="44.0" prefWidth="233.0">
+                     <children>
+                        <Label fx:id="unitQuatity" alignment="CENTER_RIGHT" prefHeight="41.0" prefWidth="168.0" text="Label" textFill="WHITE">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                           <padding>
+                              <Insets right="10.0" />
+                           </padding>
+                        </Label>
+                        <ImageView fitHeight="41.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/icons/icons8_open_box_80px.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="44.0" prefWidth="233.0">
+                     <children>
+                        <Label fx:id="total" alignment="CENTER_RIGHT" prefHeight="41.0" prefWidth="168.0" text="Label" textFill="WHITE">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                           <padding>
+                              <Insets right="10.0" />
+                           </padding>
+                        </Label>
+                        <ImageView fitHeight="41.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/icons/icons8_trolley_128px.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="44.0" prefWidth="233.0">
+                     <children>
+                        <Label fx:id="buy" alignment="CENTER_RIGHT" prefHeight="41.0" prefWidth="168.0" text="Label" textFill="WHITE">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                           <padding>
+                              <Insets right="10.0" />
+                           </padding>
+                        </Label>
+                        <ImageView fitHeight="41.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/icons/icons8_cash_in_hand_80px.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="44.0" prefWidth="233.0">
+                     <children>
+                        <Label fx:id="sell" alignment="CENTER_RIGHT" prefHeight="41.0" prefWidth="168.0" text="Label" textFill="WHITE">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                           <padding>
+                              <Insets right="10.0" />
+                           </padding>
+                        </Label>
+                        <ImageView fitHeight="41.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/icons/icons8_sell_80px.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </ImageView>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+   </children>
+</HBox>

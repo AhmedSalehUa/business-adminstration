@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox prefHeight="700.0" prefWidth="1227.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sales.SalesScreenOffersShowController">
+   <children>
+      <VBox prefHeight="569.0" prefWidth="1331.0" spacing="10.0" stylesheets="@../assets/styles/blueOrange.css" HBox.hgrow="ALWAYS">
+         <children>
+            <HBox prefHeight="161.0" prefWidth="1321.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <GridPane nodeOrientation="RIGHT_TO_LEFT" HBox.hgrow="ALWAYS">
+                     <columnConstraints>
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label alignment="CENTER" prefHeight="30.0" prefWidth="150.0" text="الفترة من" textAlignment="CENTER" GridPane.columnIndex="2">
+                           <font>
+                              <Font size="27.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" prefHeight="30.0" prefWidth="150.0" text="العميل" textAlignment="CENTER">
+                           <font>
+                              <Font size="27.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" prefHeight="30.0" prefWidth="150.0" text="الفترة الي" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="27.0" />
+                           </font>
+                        </Label>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1">
+                           <children>
+                              <ComboBox fx:id="client" prefHeight="25.0" prefWidth="202.0" />
+                              <CheckBox fx:id="withClient" mnemonicParsing="false" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="3">
+                           <children>
+                              <JFXDatePicker fx:id="dateFrom" nodeOrientation="RIGHT_TO_LEFT" prefHeight="25.0" prefWidth="202.0" />
+                              <CheckBox fx:id="withDateFrom" mnemonicParsing="false" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                           <children>
+                              <JFXDatePicker fx:id="dateTo" nodeOrientation="RIGHT_TO_LEFT" prefHeight="28.0" prefWidth="202.0" />
+                              <CheckBox fx:id="withDateTo" mnemonicParsing="false" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" spacing="10.0" GridPane.columnSpan="4" GridPane.rowIndex="2">
+                           <children>
+                              <ProgressIndicator fx:id="progress" />
+                              <Button id="btnEdite" fx:id="showInvoices" mnemonicParsing="false" onAction="#showInvoices" prefHeight="32.0" prefWidth="93.0" text="عرض" />
+                              <Button id="btnAdd" fx:id="print" mnemonicParsing="false" onAction="#printInvoices" prefHeight="32.0" prefWidth="93.0" text="طباعة" />
+                           </children>
+                        </HBox>
+                        <Label alignment="CENTER" prefHeight="39.0" prefWidth="214.0" text="مسؤول المبيعات" textAlignment="CENTER" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="27.0" />
+                           </font>
+                        </Label>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <children>
+                              <ComboBox fx:id="sales" prefHeight="25.0" prefWidth="202.0" />
+                              <CheckBox fx:id="withSales" mnemonicParsing="false" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </GridPane>
+               </children>
+            </HBox>
+            <HBox prefHeight="216.0" prefWidth="1321.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <TableView fx:id="invoiceTable" onMouseClicked="#getInvoiceData" prefHeight="136.0" prefWidth="1311.0" HBox.hgrow="ALWAYS">
+                     <columns>
+                        <TableColumn fx:id="invoiceTabNotes" prefWidth="75.0" text="ملاحظات" />
+                        <TableColumn fx:id="invoiceTabTotalCost" prefWidth="75.0" text="السعر بعد الخصم" />
+                        <TableColumn fx:id="invoiceTabDiscPerc" prefWidth="75.0" text="نسبة الخصم" />
+                        <TableColumn fx:id="invoiceTabDisc" prefWidth="75.0" text="الخصم" />
+                        <TableColumn fx:id="invoiceTabCost" prefWidth="75.0" text="السعر قبل الخصم" />
+                        <TableColumn fx:id="invoiceTabDate" prefWidth="75.0" text="التاريخ" />
+                        <TableColumn fx:id="invoiceTabSales" prefWidth="75.0" text="مسؤول المبيعات" />
+                        <TableColumn fx:id="invoiceTabClient" prefWidth="75.0" text="العميل" />
+                        <TableColumn fx:id="invoiceTabId" prefWidth="75.0" text="م" />
+                     </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </HBox>
+            <HBox VBox.vgrow="ALWAYS">
+               <children>
+                  <TabPane nodeOrientation="RIGHT_TO_LEFT" prefHeight="239.0" prefWidth="1301.0" tabClosingPolicy="UNAVAILABLE" HBox.hgrow="ALWAYS">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                     <tabs>
+                        <Tab text="المنتجات">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TableView fx:id="invoiceTable1" nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <columns>
+                                          <TableColumn fx:id="tabTotalCost" prefWidth="75.0" text="الاجمالي" />
+                                          <TableColumn fx:id="tabCost" prefWidth="75.0" text="السعر" />
+                                          <TableColumn fx:id="tabAmount" prefWidth="75.0" text="الكمية" />
+                                          <TableColumn fx:id="tabProduct" prefWidth="75.0" text="الصنف" />
+                                          <TableColumn fx:id="tabId" prefWidth="75.0" text="م" />
+                                       </columns>
+                                       <columnResizePolicy>
+                                          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                       </columnResizePolicy>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab text="الشروط">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <HBox layoutX="10.0" layoutY="1.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="172.0" prefWidth="1317.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <TableView id="patientTable" fx:id="CondTab" prefHeight="169.0" prefWidth="892.0" HBox.hgrow="ALWAYS">
+                                             <columns>
+                                                <TableColumn fx:id="CondTabValue" editable="false" prefWidth="169.0" text="القيمة" />
+                                                <TableColumn fx:id="CondTabAttribute" editable="false" prefWidth="169.0" text="الشرط" />
+                                                <TableColumn fx:id="CondTabId" editable="false" minWidth="0.0" prefWidth="30.0" text="م" />
+                                             </columns>
+                                             <columnResizePolicy>
+                                                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                             </columnResizePolicy>
+                                          </TableView>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                     </tabs>
+                  </TabPane>
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="10.0" right="10.0" top="10.0" />
+         </padding>
+      </VBox>
+   </children>
+</HBox>

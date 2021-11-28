@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<HBox prefHeight="700.0" prefWidth="1260.0" stylesheets="@../assets/styles/blueOrange.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hr.HrScreenMainSalaryController">
+   <children>
+      <GridPane alignment="CENTER" prefHeight="637.0" prefWidth="1360.0" HBox.hgrow="ALWAYS">
+         <columnConstraints>
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Button id="mainDataBtn" fx:id="individualReport" alignment="CENTER_RIGHT" contentDisplay="RIGHT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#individualReport" prefHeight="153.0" prefWidth="334.0" text="تقرير المرتب لكل موظف" textAlignment="RIGHT" wrapText="true" GridPane.halignment="CENTER">
+               <graphic>
+                  <ImageView fitHeight="70.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/icons/icons8_cash_in_hand_80px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button id="mainDataBtn" fx:id="allSalaryxReport" alignment="CENTER_RIGHT" contentDisplay="RIGHT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#allSalaryxReport" prefHeight="153.0" prefWidth="334.0" text="تقرير الحضور والانصراف للكل" textAlignment="RIGHT" wrapText="true" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+               <graphic>
+                  <ImageView fitHeight="70.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/icons/icons8_stack_of_money_64px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button id="mainDataBtn" fx:id="clacAttend" alignment="CENTER_RIGHT" contentDisplay="RIGHT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#clacAttend" prefHeight="153.0" prefWidth="334.0" text="حساب الحضور والمرتبات" textAlignment="RIGHT" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+               <graphic>
+                  <ImageView fitHeight="70.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/icons/icons8_calculator_96px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button id="mainDataBtn" fx:id="downloadAttendane" alignment="CENTER_RIGHT" contentDisplay="RIGHT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#downloadAttendane" prefHeight="153.0" prefWidth="334.0" text="تحميل الحضور" textAlignment="RIGHT" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <graphic>
+                  <ImageView fitHeight="70.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/icons/icons8_downloading_updates_512px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+         <HBox.margin>
+            <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+         </HBox.margin>
+      </GridPane>
+   </children>
+</HBox>

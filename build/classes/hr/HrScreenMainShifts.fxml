@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<HBox prefHeight="700.0" prefWidth="1260.0" stylesheets="@../assets/styles/blueOrange.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hr.HrScreenMainShiftsController">
+   <children>
+      <GridPane alignment="CENTER" prefHeight="637.0" prefWidth="1360.0" HBox.hgrow="ALWAYS">
+         <columnConstraints>
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Button id="mainDataBtn" fx:id="workingDays" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#workingDays" prefHeight="153.0" prefWidth="334.0" text="ايام العمل" textAlignment="RIGHT" wrapText="true" GridPane.halignment="CENTER">
+               <graphic>
+                  <ImageView fitHeight="75.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/icons/icons8_work_500px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button id="mainDataBtn" fx:id="lateRules" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#lateRules" prefHeight="153.0" prefWidth="334.0" text="قواعد التاخير" textAlignment="RIGHT" wrapText="true" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+               <graphic>
+                  <ImageView fitHeight="75.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/icons/icons8_hurry_64px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button id="mainDataBtn" fx:id="overTime" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#overTime" prefHeight="153.0" prefWidth="334.0" text="طريقه حساب الovertime" textAlignment="RIGHT" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+               <graphic>
+                  <ImageView fitHeight="63.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/icons/icons8_last_6_hours_80px_2.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button id="mainDataBtn" fx:id="shifts" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#openShifts" prefHeight="153.0" prefWidth="334.0" text="الشيفتات" textAlignment="RIGHT" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <graphic>
+                  <ImageView fitHeight="75.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/icons/icons8_schedule_80px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+         <HBox.margin>
+            <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+         </HBox.margin>
+      </GridPane>
+   </children>
+</HBox>

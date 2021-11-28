@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="555" pageHeight="802" columnWidth="535" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="90a74760-7269-485c-8e6e-90f74fa8f465">
+	<property name="ireport.zoom" value="3.1384283767210035"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="style1" mode="Opaque" backcolor="#CCCCCC" hAlign="Center" vAlign="Middle" fontSize="14" isItalic="false" isUnderline="false" isStrikeThrough="false">
+		<box>
+			<pen lineWidth="0.5"/>
+			<topPen lineWidth="0.5"/>
+			<leftPen lineWidth="0.5"/>
+			<bottomPen lineWidth="0.5"/>
+			<rightPen lineWidth="0.5"/>
+		</box>
+	</style>
+	<style name="style2" hAlign="Center" vAlign="Middle" fontSize="14" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false">
+		<box>
+			<pen lineWidth="0.25"/>
+			<topPen lineWidth="0.25"/>
+			<leftPen lineWidth="0.25"/>
+			<bottomPen lineWidth="0.25"/>
+			<rightPen lineWidth="0.25"/>
+		</box>
+	</style>
+	<parameter name="clientId" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT `acc_clients_pays`.`id`,  `acc_clients_pays`.`amount`, `acc_clients_pays`.`pay_type`, `acc_clients_pays`.`cash_type`, `acc_clients_pays`.`date_of_doc`, `acc_clients_pays`.`date_of_cash`, `acc_clients_pays`.`cheek_number`, `acc_clients_pays`.`statue`, `acc_clients_pays`.`acc_id` FROM `acc_clients_pays`  WHERE  `acc_clients_pays`.`client_acc_id` in (SELECT `id` FROM `acc_clients` WHERE `client_id`=$P{clientId})]]>
+	</queryString>
+	<field name="acc_id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="statue" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cheek_number" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cash_type" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="date_of_doc" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="date_of_cash" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="pay_type" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="amount" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement style="style1" x="0" y="0" width="61" height="20" uuid="2912974c-5df9-4763-9e67-7c329ce88ff8"/>
+				<text><![CDATA[حساب رقم]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="61" y="0" width="61" height="20" uuid="8d8253a2-9b93-4c0c-a3d6-27c6777dfdf0"/>
+				<text><![CDATA[حالة التحصيل]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="122" y="0" width="61" height="20" uuid="2d24c020-90e2-4214-b367-6bd3a06138eb"/>
+				<text><![CDATA[رقم الشيك]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="183" y="0" width="61" height="20" uuid="1c240601-8095-42bd-8570-7c9500015a30"/>
+				<text><![CDATA[طريقة التحصيل]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="244" y="0" width="63" height="20" uuid="513a2ce9-3910-470b-93a1-57312f0439fa"/>
+				<text><![CDATA[تاريخ الدفع]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="307" y="0" width="72" height="20" uuid="d28c228f-6b45-422a-8ed8-b2689a174e78"/>
+				<text><![CDATA[تاريخ التحصيل]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="379" y="0" width="61" height="20" uuid="3cdc1a5b-ae2b-4652-ab0b-1305f6f3bffa"/>
+				<text><![CDATA[طريقة الدفع]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="440" y="0" width="70" height="20" uuid="4cad0b20-5b8c-4e8d-9294-bf34fb372936"/>
+				<text><![CDATA[المبلغ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="510" y="0" width="45" height="20" uuid="c71d528a-9c50-420d-befd-dc6d144c3942"/>
+				<text><![CDATA[م]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement style="style2" positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="61" height="20" uuid="873f6eca-416d-42bc-80bc-be8e1d6e34f3"/>
+				<textFieldExpression><![CDATA[$F{acc_id}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement style="style2" positionType="Float" stretchType="RelativeToTallestObject" x="61" y="0" width="61" height="20" uuid="ba30fde4-e225-4514-85e4-cf2c88a19ec4"/>
+				<textFieldExpression><![CDATA[$F{statue}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement style="style2" positionType="Float" stretchType="RelativeToTallestObject" x="122" y="0" width="61" height="20" uuid="e0905aee-0954-4f78-9a97-ad2989ab08e2"/>
+				<textFieldExpression><![CDATA[$F{cheek_number}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement style="style2" positionType="Float" stretchType="RelativeToTallestObject" x="183" y="0" width="61" height="20" uuid="1f1247ba-15d0-4d20-b0dd-ccdd85efd175"/>
+				<textFieldExpression><![CDATA[$F{cash_type}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd-MMM-yy" isBlankWhenNull="true">
+				<reportElement style="style2" positionType="Float" stretchType="RelativeToTallestObject" x="244" y="0" width="63" height="20" uuid="af456473-04b2-4f19-9504-2bcf817eeffb"/>
+				<textFieldExpression><![CDATA[$F{date_of_doc}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd-MMM-yy" isBlankWhenNull="true">
+				<reportElement style="style2" positionType="Float" stretchType="RelativeToTallestObject" x="307" y="0" width="72" height="20" uuid="a7942f1c-9da1-49bf-8412-845cd3192df6"/>
+				<textFieldExpression><![CDATA[$F{date_of_cash}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement style="style2" positionType="Float" stretchType="RelativeToTallestObject" x="379" y="0" width="61" height="20" uuid="1e1e32e5-c8e5-4d66-ac78-f97653bb07d9"/>
+				<textFieldExpression><![CDATA[$F{pay_type}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement style="style2" positionType="Float" stretchType="RelativeToTallestObject" x="440" y="0" width="70" height="20" uuid="ffad7cf1-78fe-425b-844e-a1e6183c3c1c"/>
+				<textFieldExpression><![CDATA[$F{amount}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement style="style2" positionType="Float" stretchType="RelativeToTallestObject" x="510" y="0" width="45" height="20" uuid="3e0d0f32-eb2d-41ac-adce-155c590504b7"/>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

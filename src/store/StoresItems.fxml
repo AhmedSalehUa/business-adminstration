@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox fx:id="item" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="RIGHT_TO_LEFT" prefHeight="273.0" prefWidth="233.0" stylesheets="@../assets/styles/lightMode.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane id="storeCard" prefHeight="273.0" prefWidth="233.0">
+         <children>
+            <Pane id="storeCardTop" layoutY="-2.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="90.0" prefWidth="233.0">
+               <children>
+                  <HBox alignment="CENTER" layoutY="-5.0" prefHeight="100.0" prefWidth="233.0">
+                     <children>
+                        <Label fx:id="name" alignment="CENTER" prefHeight="94.0" prefWidth="156.0" text="المخزن الرئيسي" textFill="WHITE" HBox.hgrow="ALWAYS">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="id" alignment="CENTER" prefHeight="92.0" prefWidth="68.0" text="0" textFill="WHITE" HBox.hgrow="ALWAYS">
+                           <font>
+                              <Font size="32.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </Pane>
+            <VBox layoutX="-2.0" layoutY="88.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="170.0" prefWidth="233.0">
+               <children>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="57.0" prefWidth="233.0">
+                     <children>
+                        <Label fx:id="totalProduct" alignment="CENTER_RIGHT" prefHeight="41.0" prefWidth="168.0" text="Label" textFill="WHITE">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                           <padding>
+                              <Insets right="10.0" />
+                           </padding>
+                        </Label>
+                        <ImageView fitHeight="41.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/icons/icons8_package_128px.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="57.0" prefWidth="233.0">
+                     <children>
+                        <Label fx:id="totalReturned" alignment="CENTER_RIGHT" prefHeight="41.0" prefWidth="168.0" text="Label" textFill="WHITE">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                           <padding>
+                              <Insets right="10.0" />
+                           </padding>
+                        </Label>
+                        <ImageView fitHeight="41.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/icons/icons8_return_200px.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="57.0" prefWidth="233.0">
+                     <children>
+                        <Label fx:id="transactions" alignment="CENTER_RIGHT" prefHeight="41.0" prefWidth="168.0" text="Label" textFill="WHITE">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                           <padding>
+                              <Insets right="10.0" />
+                           </padding>
+                        </Label>
+                        <ImageView fitHeight="39.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/icons/icons8_transaction_list_96px_1.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </ImageView>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+   </children>
+</HBox>

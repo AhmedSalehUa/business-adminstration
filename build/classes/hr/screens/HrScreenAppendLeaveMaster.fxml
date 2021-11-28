@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+
+<HBox alignment="CENTER" prefHeight="700.0" prefWidth="1260.0" stylesheets="@../../assets/styles/blueOrange.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hr.screens.HrScreenAppendLeaveMasterController">
+   <children>
+      <GridPane alignment="CENTER" prefHeight="561.0" prefWidth="600.0" HBox.hgrow="NEVER">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="582.0" minWidth="10.0" prefWidth="453.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="363.0" minWidth="10.0" prefWidth="285.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Label prefHeight="57.0" prefWidth="362.0" text="الموظف" GridPane.columnIndex="1">
+               <font>
+                  <Font size="30.0" />
+               </font>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </Label>
+            <ComboBox fx:id="emp" nodeOrientation="RIGHT_TO_LEFT" prefHeight="37.0" prefWidth="253.0" GridPane.halignment="CENTER" />
+            <Label prefHeight="58.0" prefWidth="426.0" text="التاريخ" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font size="30.0" />
+               </font>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </Label>
+            <Label prefHeight="60.0" prefWidth="396.0" text="سبب الانصراف" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font size="30.0" />
+               </font>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </Label>
+            <Label prefHeight="67.0" prefWidth="426.0" text="المتاح خلال الشهر" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <font>
+                  <Font size="19.0" />
+               </font>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </Label>
+            <JFXDatePicker fx:id="date" nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="249.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+            <Button id="btnAdd" fx:id="save" mnemonicParsing="false" onAction="#save" prefHeight="45.0" prefWidth="73.0" text="حفظ" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+            <ComboBox fx:id="leaveMaster" nodeOrientation="RIGHT_TO_LEFT" onAction="#calcLeave" prefHeight="37.0" prefWidth="253.0" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+            <Label fx:id="available" alignment="CENTER" contentDisplay="CENTER" prefHeight="67.0" prefWidth="426.0" text="0" GridPane.rowIndex="3">
+               <font>
+                  <Font size="19.0" />
+               </font>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </Label>
+         </children>
+      </GridPane>
+   </children>
+</HBox>

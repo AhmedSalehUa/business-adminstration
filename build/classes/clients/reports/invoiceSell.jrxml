@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="555" pageHeight="802" columnWidth="535" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="509a947a-7120-4ac7-9f62-ce1256dac386">
+	<property name="ireport.zoom" value="2.853116706110003"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="style1" mode="Opaque" backcolor="#CCCCCC" hAlign="Center" vAlign="Middle" fontSize="12" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false">
+		<box>
+			<pen lineWidth="0.5"/>
+			<topPen lineWidth="0.5"/>
+			<leftPen lineWidth="0.5"/>
+			<bottomPen lineWidth="0.5"/>
+			<rightPen lineWidth="0.5"/>
+		</box>
+	</style>
+	<style name="style2" hAlign="Center" vAlign="Middle" fontSize="14" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false">
+		<box>
+			<pen lineWidth="0.25"/>
+			<topPen lineWidth="0.25"/>
+			<leftPen lineWidth="0.25"/>
+			<bottomPen lineWidth="0.25"/>
+			<rightPen lineWidth="0.25"/>
+		</box>
+	</style>
+	<parameter name="invoiceId" class="java.lang.String"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Users\\AHMED\\Documents\\NetBeansProjects\\BusinessAdministration\\src\\clients\\reports\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="invoiceDetailsReport" class="java.lang.Object" isForPrompting="false"/>
+	<queryString>
+		<![CDATA[SELECT `id`, `client_id`, `date`, `original_cost`, `discount`, `discount_percent`, `with_tax`, `total`, `pay_type`, `price_type`, `notes` FROM `cli_invoices` WHERE `id`=$P{invoiceId}]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="client_id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="date" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="original_cost" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="discount" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="discount_percent" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="with_tax" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="total" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="pay_type" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="price_type" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="notes" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="18" splitType="Stretch">
+			<staticText>
+				<reportElement style="style1" x="244" y="0" width="79" height="17" uuid="415c2a11-8bfb-4ad1-bf35-a52c21c702ab"/>
+				<text><![CDATA[الاجمالي بعد الخصم]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="323" y="0" width="43" height="17" uuid="1b4a5174-1d88-4c78-86d8-37f187bacdf5"/>
+				<text><![CDATA[نسبة الخصم]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="60" y="0" width="60" height="17" uuid="cb3256d5-0f99-4bd4-8c05-0d519d8f4da1"/>
+				<textElement>
+					<font isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[شاملة الضريبة]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="120" y="0" width="69" height="17" uuid="7b78de3a-24d2-4fb8-b05f-f74b35791826"/>
+				<text><![CDATA[طريقة التحصيل]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="189" y="0" width="55" height="17" uuid="ae4b10f7-2c22-431c-b9af-8b98844d40ea"/>
+				<text><![CDATA[طريقة الدفع]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="0" y="0" width="60" height="17" uuid="612b8e57-37ec-4efe-a7cc-e9120d2e28c4"/>
+				<text><![CDATA[ملاحظات]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="464" y="0" width="60" height="17" uuid="45358369-c371-45b7-886d-970c3b47b3a8"/>
+				<text><![CDATA[التاريخ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="366" y="0" width="43" height="17" uuid="2c4c25df-811f-4d84-9c37-e67e0f348261"/>
+				<text><![CDATA[خصم]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="409" y="0" width="55" height="17" uuid="951a0f89-7504-46f8-b668-3a046d08a622"/>
+				<text><![CDATA[الاجمالي]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="524" y="0" width="31" height="17" uuid="d6a66715-85ff-4740-b9c4-cc1e0cdcaf90"/>
+				<text><![CDATA[م]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement style="style2" positionType="Float" stretchType="RelativeToTallestObject" x="244" y="0" width="79" height="20" isPrintWhenDetailOverflows="true" uuid="0689b37d-72ee-4d41-86a0-2752d0bfdbf3"/>
+				<textFieldExpression><![CDATA[$F{total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="style2" positionType="Float" stretchType="RelativeToTallestObject" x="323" y="0" width="43" height="20" isPrintWhenDetailOverflows="true" uuid="aa1b3e55-a676-463e-ab3d-5228c0263ff6"/>
+				<textFieldExpression><![CDATA[$F{discount_percent}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="style2" positionType="Float" stretchType="RelativeToTallestObject" x="60" y="0" width="60" height="20" isPrintWhenDetailOverflows="true" uuid="fd38b50a-05c0-49a6-a04e-2bfaec40fae6"/>
+				<textFieldExpression><![CDATA[$F{with_tax}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="style2" positionType="Float" stretchType="RelativeToTallestObject" x="120" y="0" width="69" height="20" isPrintWhenDetailOverflows="true" uuid="8cd27334-0615-494a-9519-d22d78b72b85"/>
+				<textFieldExpression><![CDATA[$F{price_type}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="style2" positionType="Float" stretchType="RelativeToTallestObject" x="189" y="0" width="55" height="20" isPrintWhenDetailOverflows="true" uuid="c485cf63-7705-42a1-9dcb-a698eaae6aa3"/>
+				<textFieldExpression><![CDATA[$F{pay_type}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="style2" positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="60" height="20" isPrintWhenDetailOverflows="true" uuid="161e8f36-247e-4e99-8a94-89ed99541c75"/>
+				<textFieldExpression><![CDATA[$F{notes}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd-MMM-yy">
+				<reportElement style="style2" positionType="Float" stretchType="RelativeToTallestObject" x="464" y="0" width="60" height="20" isPrintWhenDetailOverflows="true" uuid="da893515-afe3-469f-8380-a4d74f97448a"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="style2" positionType="Float" stretchType="RelativeToTallestObject" x="366" y="0" width="43" height="20" isPrintWhenDetailOverflows="true" uuid="a8342078-4480-418a-b3e8-bc4d56647a42"/>
+				<textFieldExpression><![CDATA[$F{discount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="style2" positionType="Float" stretchType="RelativeToTallestObject" x="409" y="0" width="55" height="20" isPrintWhenDetailOverflows="true" uuid="d530cef8-bc95-4f43-968a-0cb3747f651a"/>
+				<textFieldExpression><![CDATA[$F{original_cost}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="style2" positionType="Float" stretchType="RelativeToTallestObject" x="524" y="0" width="31" height="20" isPrintWhenDetailOverflows="true" uuid="ddc77ec9-059b-4368-8e8e-bad88b5279cd"/>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="134" splitType="Stretch">
+			<subreport isUsingCache="false">
+				<reportElement x="0" y="34" width="555" height="100" isRemoveLineWhenBlank="true" uuid="805f0065-ddb6-44d1-b23c-e99aabfed153"/>
+				<subreportParameter name="invoiceId">
+					<subreportParameterExpression><![CDATA[$P{invoiceId}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{invoiceDetailsReport}]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement x="229" y="4" width="100" height="20" uuid="78dfcc89-f1dc-4a18-9c69-f79edadfc97c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[تفاصيل الفاتورة]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

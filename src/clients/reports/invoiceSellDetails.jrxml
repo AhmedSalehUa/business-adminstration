@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="555" pageHeight="802" columnWidth="535" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="1ec7f928-3f7b-4e76-8ea3-53479220b540">
+	<property name="ireport.zoom" value="2.5937424601000023"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="style1" mode="Opaque" backcolor="#CCCCCC" hAlign="Center" vAlign="Middle" fontSize="14" isItalic="false" isUnderline="false" isStrikeThrough="false">
+		<box>
+			<pen lineWidth="0.5"/>
+			<topPen lineWidth="0.5"/>
+			<leftPen lineWidth="0.5"/>
+			<bottomPen lineWidth="0.5"/>
+			<rightPen lineWidth="0.5"/>
+		</box>
+	</style>
+	<style name="style2" hAlign="Center" vAlign="Middle" fontSize="14" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false">
+		<box>
+			<pen lineWidth="0.25"/>
+			<topPen lineWidth="0.25"/>
+			<leftPen lineWidth="0.25"/>
+			<bottomPen lineWidth="0.25"/>
+			<rightPen lineWidth="0.25"/>
+		</box>
+	</style>
+	<parameter name="invoiceId" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT `cli_invoices_details`.`id`,`st_products`.`name`, `cli_invoices_details`.`amount`, `cli_invoices_details`.`cost`,`cli_invoices_details`.`total_cost` FROM `cli_invoices_details`,`st_products`,`st_store_products` WHERE `st_store_products`.`id` = `cli_invoices_details`.`store_product_id` AND `st_products`.`id` =`st_store_products`.`product_id` AND `cli_invoices_details`.`invoice_id`=$P{invoiceId}]]>
+	</queryString>
+	<field name="total_cost" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cost" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="amount" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<columnHeader>
+		<band height="21" splitType="Stretch">
+			<staticText>
+				<reportElement style="style1" x="0" y="0" width="111" height="20" uuid="ace46689-5de5-46e5-a9cb-d3a8ce76635b"/>
+				<text><![CDATA[الاجمالي]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="111" y="0" width="111" height="20" uuid="30e6b577-7a4d-44a7-b081-d4dafbdb6de7"/>
+				<text><![CDATA[سعر الواحدة]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="222" y="0" width="111" height="20" uuid="04e0f615-b1ab-4158-baaf-0a72fcd257c6"/>
+				<text><![CDATA[الكمية]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="333" y="0" width="152" height="20" uuid="21aaf3c7-0d5e-488b-b664-a70477d1d425"/>
+				<text><![CDATA[الصنف]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="485" y="0" width="70" height="20" uuid="487c8678-bbad-41bd-ad7b-43b11c819fcb"/>
+				<text><![CDATA[م]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement style="style2" x="0" y="0" width="111" height="20" uuid="b0401dae-5e9b-41c5-b3d9-e3f512b869b7"/>
+				<textFieldExpression><![CDATA[$F{total_cost}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="style2" x="111" y="0" width="111" height="20" uuid="4922ca8e-bec7-4694-bc5f-81d8af6878a7"/>
+				<textFieldExpression><![CDATA[$F{cost}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="style2" x="222" y="0" width="111" height="20" uuid="d860d94a-6742-42df-a7b2-c94ac96a08e0"/>
+				<textFieldExpression><![CDATA[$F{amount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="style2" x="333" y="0" width="152" height="20" uuid="eceeb250-9852-4620-b38a-cad9c0286758"/>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="style2" x="485" y="0" width="70" height="20" uuid="5acfc2f3-c289-4281-b6cb-b8fb3696d8e7"/>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="825ac73d-588f-4a6e-9860-b9a2f9244550">
+	<property name="ireport.zoom" value="2.5937424601000023"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="345"/>
+	<style name="style1" mode="Opaque" backcolor="#CCCCCC" radius="50" hAlign="Center" vAlign="Middle" fontSize="14" isItalic="false" isUnderline="false" isStrikeThrough="false">
+		<box>
+			<pen lineWidth="0.25"/>
+			<topPen lineWidth="0.25"/>
+			<leftPen lineWidth="0.25"/>
+			<bottomPen lineWidth="0.25"/>
+			<rightPen lineWidth="0.25"/>
+		</box>
+	</style>
+	<style name="style2" hAlign="Center" vAlign="Middle" fontSize="14" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false">
+		<box>
+			<pen lineWidth="0.25"/>
+			<topPen lineWidth="0.25"/>
+			<leftPen lineWidth="0.25"/>
+			<bottomPen lineWidth="0.25"/>
+			<rightPen lineWidth="0.25"/>
+		</box>
+	</style>
+	<parameter name="providerName" class="java.lang.String"/>
+	<parameter name="providerId" class="java.lang.String"/>
+	<parameter name="totalPaied" class="java.lang.String"/>
+	<parameter name="totalInvoices" class="java.lang.String"/>
+	<parameter name="rest" class="java.lang.String"/>
+	<parameter name="leftLogo" class="java.lang.Object" isForPrompting="false"/>
+	<parameter name="rightLogo" class="java.lang.Object" isForPrompting="false"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Users\\AHMED\\Documents\\NetBeansProjects\\BusinessAdministration\\src\\clients\\reports\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="invoiceReport" class="java.lang.Object" isForPrompting="false"/>
+	<parameter name="invoiceDetailsReport" class="java.lang.Object" isForPrompting="false"/>
+	<parameter name="paysReport" class="java.lang.Object" isForPrompting="false"/>
+	<queryString>
+		<![CDATA[SELECT `id`, `invoice_id`, `amount`, `date` FROM `acc_provider` WHERE `provider_id`=$P{providerId}]]>
+	</queryString>
+	<field name="date" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="amount" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="invoice_id" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="51" splitType="Stretch">
+			<image scaleImage="FillFrame" hAlign="Center" vAlign="Middle">
+				<reportElement x="0" y="0" width="100" height="50" uuid="c91d8633-5602-47e1-b8d7-d0f1384e68ea"/>
+				<imageExpression><![CDATA[$P{leftLogo}]]></imageExpression>
+			</image>
+			<image scaleImage="FillFrame" hAlign="Center" vAlign="Middle">
+				<reportElement x="458" y="0" width="97" height="50" uuid="b056b78b-4722-4602-a481-e65de7cfb44e"/>
+				<imageExpression><![CDATA[$P{rightLogo}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="80" splitType="Stretch">
+			<staticText>
+				<reportElement x="132" y="20" width="47" height="20" uuid="5ca870c6-ddca-4847-b885-7511330eefe6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[الباقى]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="53" y="20" width="79" height="20" uuid="3f04f1d8-ca9d-4725-9c81-34bc097950e8"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{rest}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="315" y="20" width="79" height="20" uuid="c0403577-c789-471f-a770-4a8fe000ff84"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{totalInvoices}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="179" y="0" width="100" height="20" uuid="487a133e-bc9f-4224-838f-535995e23009"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{providerName}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="279" y="0" width="100" height="20" uuid="7088518e-0db8-41e0-ac86-5d82aa62a63c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[كشف حساب خاص لـ :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="394" y="20" width="100" height="20" uuid="b0806ee8-0f90-4073-8cda-85419e4d9a2b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[المبلغ المستحق]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="179" y="20" width="77" height="20" uuid="e569b7fb-1930-4bf4-baa6-10167d7db477"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{totalPaied}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="256" y="20" width="59" height="20" uuid="566494f4-1f63-4949-9a6e-d9358863d22f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[المدفوع]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="238" y="54" width="100" height="20" uuid="ce2cc3e4-3df3-4dcc-a0ff-6edd9e71c8bd"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[المبالغ المستحقة]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="185" splitType="Stretch">
+			<textField pattern="dd-MMM-yy">
+				<reportElement style="style2" x="93" y="20" width="109" height="20" uuid="594ed218-e8bc-48d9-894a-037da0defcb6"/>
+				<textFieldExpression><![CDATA[$F{date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="style2" x="202" y="20" width="109" height="20" uuid="f4a44d06-c3de-4470-834e-e0df189f03aa"/>
+				<textFieldExpression><![CDATA[$F{amount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="style2" x="311" y="20" width="109" height="20" uuid="dcbb9e36-e5ad-4c60-9243-4140dfa39847"/>
+				<textFieldExpression><![CDATA[$F{invoice_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="style2" x="420" y="20" width="49" height="20" uuid="fdd37762-10a1-4855-bcf0-ab6aeddb4885"/>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="style1" x="420" y="0" width="49" height="20" uuid="51f097b0-100d-4686-a7d8-284d863acd71"/>
+				<text><![CDATA[م]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="311" y="0" width="109" height="20" uuid="8968c6c5-f540-452e-9ba2-b94e689f5128"/>
+				<text><![CDATA[رقم الفاتورة]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="202" y="0" width="109" height="20" uuid="79a85877-57bd-466c-ad48-ed67d0c274c0"/>
+				<text><![CDATA[المبلغ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="93" y="0" width="109" height="20" uuid="73a27414-8049-4da2-a30c-8a8d388c27c3"/>
+				<text><![CDATA[التاريخ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="238" y="51" width="100" height="20" uuid="cfc6ea3a-0fb7-4877-8d60-64a4afa47d5e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[تفاصيل المبلغ]]></text>
+			</staticText>
+			<subreport isUsingCache="false">
+				<reportElement positionType="Float" x="0" y="85" width="555" height="100" uuid="007ec782-ee78-408b-b96b-19ff993851c2"/>
+				<subreportParameter name="invoiceId">
+					<subreportParameterExpression><![CDATA[$F{invoice_id}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="invoiceDetailsReport">
+					<subreportParameterExpression><![CDATA[$P{invoiceDetailsReport}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{invoiceReport}]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<summary>
+		<band height="141" splitType="Stretch">
+			<staticText>
+				<reportElement x="238" y="10" width="100" height="20" uuid="6d4ac2f3-f155-4aa5-bca2-7d97dadd4d8e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[المبالغ المدفوعه]]></text>
+			</staticText>
+			<subreport isUsingCache="false">
+				<reportElement positionType="Float" x="0" y="41" width="555" height="100" uuid="96cc965c-0a70-4cb2-ad9e-13610e5ba971"/>
+				<subreportParameter name="providerId">
+					<subreportParameterExpression><![CDATA[$P{providerId}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{paysReport}]]></subreportExpression>
+			</subreport>
+		</band>
+	</summary>
+</jasperReport>
