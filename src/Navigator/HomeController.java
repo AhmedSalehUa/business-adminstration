@@ -108,7 +108,8 @@ public class HomeController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        prefs = Preferences.userNodeForPackage(BusinessAdministration.class); setStatics();
+        prefs = Preferences.userNodeForPackage(BusinessAdministration.class);
+        setStatics();
         new ZoomInRight(Hr).play();
         new ZoomInRight(provider).play();
         new ZoomInLeft(Accounts).play();
@@ -128,7 +129,7 @@ public class HomeController implements Initializable {
         if (!prefs.get(USER_ROLE, "user").equals("user")) {
             userNode.getItems().add(controlPanel);
         }
-       
+
         logout.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {
@@ -583,10 +584,10 @@ public class HomeController implements Initializable {
 
     private void setStatics() {
         try {
-             allClients.setText(ClientsStatics.getAllClient());
-        newClients.setText(ClientsStatics.getNewClient());
-        newOrders.setText(ClientsStatics.getAllInvoice());
-        newReturned.setText(ClientsStatics.getAllReturnes());
+            allClients.setText(ClientsStatics.getAllClient());
+            newClients.setText(ClientsStatics.getNewClient());
+            newOrders.setText(ClientsStatics.getAllInvoice());
+            newReturned.setText(ClientsStatics.getAllReturnes());
             LineChart clientLineChart = HomeStatics.getClientLineChart();
             statisticsPane.getChildren().add(clientLineChart);
             statisticsPane.setVgrow(clientLineChart, Priority.ALWAYS);
